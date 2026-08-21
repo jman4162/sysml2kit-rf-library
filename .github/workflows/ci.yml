@@ -56,13 +56,7 @@ jobs:
         with:
           enable-cache: true
       - run: uv sync --group dev
-      - run: >
-          uv run --with 'sysml2kit[parse]' python -c "
-          from pathlib import Path;
-          from sysml2kit.backends import get_backend;
-          files = sorted(Path('src/sysml2kit_rf_library/models').glob('*.sysml'));
-          get_backend('sysmlpy').parse_files(files);
-          print(f'parsed {len(files)} files')"
+      - run: uv run --with 'sysml2kit[parse]' python scripts/check_parse.py
 
   package:
     name: build & inspect
