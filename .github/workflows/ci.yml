@@ -56,7 +56,7 @@ jobs:
         with:
           enable-cache: true
       - run: uv sync --group dev
-      - run: uv run --with 'sysml2kit[parse]' python scripts/check_parse.py
+      - run: uv run --with 'sysml2kit[parse]>=0.4.0' python scripts/check_parse.py
 
   package:
     name: build & inspect

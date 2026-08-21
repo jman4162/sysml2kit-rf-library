@@ -103,3 +103,9 @@ filterwarnings = ["error"]
 
 [tool.slopscore]
 profile = "technical"
+
+[tool.check-wheel-contents]
+# W002 (duplicate files): the engine payload YAMLs are intentionally
+# present next to both model formats, so configRef resolves whether a
+# consumer verifies the interchange JSON or the textual notation.
+ignore = ["W002"]
