@@ -63,9 +63,7 @@ def test_fidelity_ladder_all_policy_reports_spread():
         "pattern",
         None,  # the opensatcom crosscheck binding declares no rung label
     }
-    margins = {
-        v.fidelity: v.actual for v in run.requirements if v.requirement_id == "REQ-MARGIN"
-    }
+    margins = {v.fidelity: v.actual for v in run.requirements if v.requirement_id == "REQ-MARGIN"}
     # The degeneracy the ladder exists to break: both analytic-gain rungs
     # agree exactly, and only pattern integration moves the margin.
     assert margins["analytic"] == margins["pattern-cuts"]
