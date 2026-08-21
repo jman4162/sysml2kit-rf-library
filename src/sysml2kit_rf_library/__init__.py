@@ -20,6 +20,7 @@ except PackageNotFoundError:  # running from a source tree without an install
 MODELS = {
     "rf-library": "rf_library",
     "satcom-terminal-t3001": "satcom_terminal_t3001",
+    "satcom-terminal-pas": "satcom_terminal_pas",
 }
 
 

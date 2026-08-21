@@ -356,3 +356,131 @@ def build_example() -> Model:
     """Build the library plus the SatcomTerminal28GHz example package."""
     model = build_library()
     return _add_example(model)
+
+
+def _add_pas_example(model: Model) -> Model:
+    """Add the SatcomTerminalPAS package: an executable verification example.
+
+    Unlike SatcomTerminal28GHz (which mirrors the aedl t3-001 benchmark and
+    its metric names), this example's requirements use the metric keys
+    phased-array-systems actually emits, and its analysis carries a
+    ``verificationBinding`` so ``sysml2kit verify`` runs a real study
+    (engine ``phased-array-systems``, config ``satcom_terminal_pas.yaml``).
+    """
+    defs = _defs(model)
+    pkg = builder.pkg(
+        model,
+        "SatcomTerminalPAS",
+        doc=(
+            "28 GHz LEO uplink terminal sized for verification closure: a "
+            "16x16 Taylor-tapered array whose study the phased-array-systems "
+            "engine executes, checking margin, EIRP, sidelobes, power, and cost."
+        ),
+    )
+    pkg.imports = ["RFVocabulary::*", "RFParts::*", "RFRequirements::*", "RFAnalyses::*"]
+
+    terminal = builder.part(model, "terminal", owner=pkg, definition=defs["SatcomTerminal"])
+    array = builder.part(model, "array", owner=terminal, definition=defs["PhasedArrayAntenna"])
+    builder.attr(model, "frequency", 28.0, owner=array, unit="GHz")
+    builder.attr(model, "elementsX", 16, owner=array)
+    builder.attr(model, "elementsY", 16, owner=array)
+    builder.attr(model, "taperSidelobeTarget", -25.0, owner=array, unit="dB")
+
+    reqs = [
+        (
+            "REQ-MARGIN",
+            "LinkMarginFloor",
+            "LinkMarginRequirement",
+            "The link shall close with at least 3 dB margin at the nominal point.",
+            "link_margin_db",
+            ">=",
+            3.0,
+            "dB",
+        ),
+        (
+            "REQ-EIRP",
+            "EirpFloor",
+            "EirpRequirement",
+            "EIRP shall be at least 40 dBW.",
+            "eirp_dbw",
+            ">=",
+            40.0,
+            "dBW",
+        ),
+        (
+            "REQ-SLL",
+            "SidelobeCeiling",
+            "SidelobeRequirement",
+            "Pattern sidelobes shall not exceed -20 dB.",
+            "sll_db",
+            "<=",
+            -20.0,
+            "dB",
+        ),
+        (
+            "REQ-POWER",
+            "PrimePowerCeiling",
+            "PowerCeilingRequirement",
+            "Prime power draw shall not exceed 450 W.",
+            "prime_power_w",
+            "<=",
+            450.0,
+            "W",
+        ),
+        (
+            "REQ-COST",
+            "CostCeiling",
+            "CostCeilingRequirement",
+            "Recurring cost shall not exceed 60,000 USD.",
+            "total_cost_usd",
+            "<=",
+            60000.0,
+            None,
+        ),
+    ]
+    req_elements = {}
+    for short, name, def_name, text, key, op, threshold, unit in reqs:
+        req_elements[short] = _metric_requirement(
+            model,
+            pkg,
+            short,
+            name,
+            definition=defs[def_name],
+            text=text,
+            metric_key=key,
+            op=op,
+            threshold=threshold,
+            unit=unit,
+        )
+
+    study = builder.analysis(
+        model,
+        "pasStudy",
+        owner=pkg,
+        definition=defs["LinkBudgetAnalysis"],
+        subject=terminal,
+        objective="Evaluate the terminal study with phased-array-systems.",
+    )
+    builder.metadata(
+        model,
+        study,
+        {"engine": "phased-array-systems", "configRef": "satcom_terminal_pas.yaml"},
+        name="verificationBinding",
+    )
+    for req_usage in req_elements.values():
+        builder.verify(model, source=study, target=req_usage, owner=pkg)
+    for short, satisfier in [
+        ("REQ-MARGIN", terminal),
+        ("REQ-EIRP", array),
+        ("REQ-SLL", array),
+        ("REQ-POWER", terminal),
+        ("REQ-COST", terminal),
+    ]:
+        builder.satisfy(model, source=satisfier, target=req_elements[short], owner=pkg)
+    return model
+
+
+def build_pas_example() -> Model:
+    """Build the library plus the executable SatcomTerminalPAS package."""
+    model = build_library()
+    return _add_pas_example(model)

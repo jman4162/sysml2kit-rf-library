@@ -85,6 +85,7 @@ files = ["src/sysml2kit_rf_library", "scripts"]
 minversion = "8.0"
 testpaths = ["tests"]
 addopts = ["-ra", "--strict-markers", "--strict-config"]
+markers = ["pas: needs phased-array-systems installed"]
 xfail_strict = true
 filterwarnings = ["error"]
 

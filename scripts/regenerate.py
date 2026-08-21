@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from sysml2kit.interchange import write_json
 from sysml2kit.text import write_package
 
-from sysml2kit_rf_library._build import build_example, build_library
+from sysml2kit_rf_library._build import build_example, build_library, build_pas_example
 
 
 def main() -> int:
@@ -36,12 +36,19 @@ def main() -> int:
     example.assign_stable_ids()
     write_json(example, models / "interchange" / "satcom_terminal_t3001.json")
 
-    for root_id in example.roots:
-        package = example.elements[root_id]
-        text = write_package(example, package)
-        (models / f"{package.declared_name}.sysml").write_text(text)
-        print(f"wrote {package.declared_name}.sysml")
-    print("wrote interchange/rf_library.json, interchange/satcom_terminal_t3001.json")
+    pas_example = build_pas_example()
+    pas_example.assign_stable_ids()
+    write_json(pas_example, models / "interchange" / "satcom_terminal_pas.json")
+
+    for source in (example, pas_example):
+        for root_id in source.roots:
+            package = source.elements[root_id]
+            path = models / f"{package.declared_name}.sysml"
+            text = write_package(source, package)
+            if not path.exists() or path.read_text() != text:
+                path.write_text(text)
+                print(f"wrote {package.declared_name}.sysml")
+    print("wrote interchange/{rf_library,satcom_terminal_t3001,satcom_terminal_pas}.json")
     return 0
 
 

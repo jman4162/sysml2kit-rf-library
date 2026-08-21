@@ -73,6 +73,7 @@ def test_sysml_files_exist_for_every_package():
         "RFRequirements",
         "RFAnalyses",
         "SatcomTerminal28GHz",
+        "SatcomTerminalPAS",
     }
 
 
