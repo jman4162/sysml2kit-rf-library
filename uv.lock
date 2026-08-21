@@ -2074,7 +2074,7 @@ wheels = [
 
 [[package]]
 name = "sysml2kit"
-version = "0.3.1"
+version = "0.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "httpx" },
@@ -2082,9 +2082,9 @@ dependencies = [
     { name = "pydantic" },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/66/6d/156f6dc8807f352b3b4a862b3fe0fda14f3260ab890b51bec57ec867ba46/sysml2kit-0.3.1.tar.gz", hash = "sha256:5c28aaca509800f79a9fd23d66a85220fe4d44bcd2caa2061ecd8f949205846f", size = 216267, upload-time = "2026-08-21T20:58:33.144Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/fe/31/58ced041bd99997a252b3eb09bcd99ff0e7c4106c4a4660e86ecb15ddde5/sysml2kit-0.4.0.tar.gz", hash = "sha256:26019265ae3461ea2ad94f3e1bf2f89c11e4af87971d834cb25bfa5a1e77123b", size = 229321, upload-time = "2026-08-21T21:58:57.481Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/72/58/4c7b4dc8a1d1d35faef25d4b21f78b7b67c1b687c99ef254ac3d0f075fe8/sysml2kit-0.3.1-py3-none-any.whl", hash = "sha256:7c8a0c1abda0e17ae961d656d1c72f1b3245d86eb7f2daaf354c6cb41ce23235", size = 65586, upload-time = "2026-08-21T20:58:31.672Z" },
+    { url = "https://files.pythonhosted.org/packages/4d/3b/bb693dd9e439a6062b9a3361d1b097ea1ed5fb739c49f510919841b0e5bd/sysml2kit-0.4.0-py3-none-any.whl", hash = "sha256:505c7f820b9aa67cab91ef3095c62001be5960719a3c6682cb41695d9fae49c1", size = 74137, upload-time = "2026-08-21T21:58:56.031Z" },
 ]
 
 [package.optional-dependencies]
@@ -2131,8 +2131,8 @@ test = [
 requires-dist = [
     { name = "opensatcom", marker = "extra == 'verify'", specifier = ">=0.7" },
     { name = "phased-array-systems", marker = "extra == 'verify'", specifier = ">=0.13" },
-    { name = "sysml2kit", specifier = ">=0.3.0" },
-    { name = "sysml2kit", extras = ["parse", "verify"], marker = "extra == 'verify'", specifier = ">=0.3.1" },
+    { name = "sysml2kit", specifier = ">=0.4.0" },
+    { name = "sysml2kit", extras = ["parse", "verify"], marker = "extra == 'verify'", specifier = ">=0.4.0" },
 ]
 provides-extras = ["verify"]
 
