@@ -41,10 +41,12 @@ dependencies = ["sysml2kit>=0.3.0"]
 
 [project.optional-dependencies]
 # Everything the executable verification example needs.
+# TODO(0.3.0 tag): bump to sysml2kit>=0.4.0 / phased-array-systems>=0.14 /
+# opensatcom>=0.8 once all three are on PyPI; until then CI must resolve.
 verify = [
-  "sysml2kit[parse,verify]>=0.4.0",
-  "phased-array-systems>=0.14",
-  "opensatcom>=0.8",
+  "sysml2kit[parse,verify]>=0.3.1",
+  "phased-array-systems>=0.13",
+  "opensatcom>=0.7",
 ]
 
 [project.urls]
