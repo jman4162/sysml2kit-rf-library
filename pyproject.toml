@@ -46,7 +46,8 @@ Issues = "https://github.com/jman4162/sysml2kit-rf-library/issues"
 [dependency-groups]
 test = ["pytest>=8.3"]
 lint = ["mypy>=1.15", "ruff>=0.16"]
-dev = [{ include-group = "test" }, { include-group = "lint" }]
+docs = ["mkdocs-material>=9.5"]
+dev = [{ include-group = "test" }, { include-group = "lint" }, { include-group = "docs" }]
 
 [tool.hatch.version]
 source = "vcs"
@@ -59,7 +60,7 @@ version-file = "src/sysml2kit_rf_library/_version.py"
 packages = ["src/sysml2kit_rf_library"]
 
 [tool.hatch.build.targets.sdist]
-exclude = [".github", "scripts/.slopvenv"]
+exclude = [".github", "scripts/.slopvenv", "docs", "mkdocs.yml", "site"]
 
 [tool.ruff]
 line-length = 100

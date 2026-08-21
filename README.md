@@ -3,6 +3,7 @@
 [![CI](https://github.com/jman4162/sysml2kit-rf-library/actions/workflows/ci.yml/badge.svg)](https://github.com/jman4162/sysml2kit-rf-library/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/sysml2kit-rf-library)](https://pypi.org/project/sysml2kit-rf-library/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-jman4162.github.io-blue)](https://jman4162.github.io/sysml2kit-rf-library/)
 
 A SysML v2 model library for antenna/RF systems engineering, consumed through
 [sysml2kit](https://github.com/jman4162/sysml2kit).
@@ -24,6 +25,15 @@ The kit stays domain-general; this library carries the RF vocabulary:
   requirement set (worst-case link margin, sidelobes, independent link
   crosscheck, power and cost ceilings, grating-lobe margin), each satisfied
   by a part and verified by an analysis.
+- **SatcomTerminalPAS** — the executable example: five requirements keyed to
+  metrics phased-array-systems emits, with a `verificationBinding` so
+  `sysml2kit verify` runs a real study and every requirement passes with
+  margin.
+
+Both bridges into the stack are merged: `phased_array_systems.interop.sysml`
+(requirement sets, and the `phased-array-systems` verification engine) and
+`aedl.interop` (bound-form benchmark requirements). Agents load these models
+through sysml2kit's `library_load` MCP tool.
 
 ## Install and load
 
@@ -42,11 +52,13 @@ for spec in extract_requirements(model):
     print(spec.id, spec.metric_key, spec.op, spec.value, spec.units)
 ```
 
-Or inspect it from the command line:
+Or from the command line (paths via `models_dir()`, which works for pip
+installs, not just a checkout):
 
 ```bash
-sysml2kit show src/sysml2kit_rf_library/models/interchange/satcom_terminal_t3001.json --traceability
-sysml2kit validate src/sysml2kit_rf_library/models/interchange/*.json
+MODELS=$(python -c 'import sysml2kit_rf_library as m; print(m.models_dir())')
+sysml2kit show "$MODELS/interchange/satcom_terminal_t3001.json" --traceability
+sysml2kit verify "$MODELS/interchange/satcom_terminal_pas.json" --report run.json
 ```
 
 ## How the repo is organized

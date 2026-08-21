@@ -22,3 +22,6 @@ src/sysml2kit_rf_library/_version.py
 .vscode/
 
 scripts/.slopvenv/
+
+# Docs build
+site/
