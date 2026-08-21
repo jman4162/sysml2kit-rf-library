@@ -1,0 +1,1274 @@
+[
+  {
+    "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317",
+    "@type": "Package",
+    "declaredName": "RFAnalyses",
+    "doc": "Analysis case definitions; bindings to physics engines live downstream."
+  },
+  {
+    "@id": "0ffc38d6-779a-5692-852e-137f74a0434c",
+    "@type": "AnalysisCaseDefinition",
+    "declaredName": "ArrayPatternAnalysis",
+    "doc": "Full pattern integration: gain, sidelobes, grating lobes.",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
+    "@id": "97886442-1eb2-508e-ab76-e603d6a09fb6",
+    "@type": "AnalysisCaseDefinition",
+    "declaredName": "LinkBudgetAnalysis",
+    "doc": "Worst-case link closure over an evaluation envelope.",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
+    "@id": "728bf6f2-e130-550d-8680-9117909edfa8",
+    "@type": "AnalysisCaseDefinition",
+    "declaredName": "ScanPerformanceAnalysis",
+    "doc": "Gain and pattern degradation across the scan envelope.",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
+    "@id": "0f3faf77-fbd0-5633-82c3-7742e282ef4d",
+    "@type": "AnalysisCaseDefinition",
+    "declaredName": "SwapCostAnalysis",
+    "doc": "Prime power and recurring cost rollup.",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
+    "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443",
+    "@type": "Package",
+    "declaredName": "RFParts",
+    "doc": "Part and port definitions for phased-array antenna systems."
+  },
+  {
+    "@id": "7f368b18-c534-583f-8ba9-68600e06e983",
+    "@type": "PartDefinition",
+    "declaredName": "AntennaElement",
+    "doc": "A single radiating element.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "b7e1dad6-cb74-5420-bc97-e105da38e45d",
+    "@type": "PortDefinition",
+    "declaredName": "BeamPort",
+    "doc": "Formed-beam signal interface.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "1f47c2af-24bd-5553-b16a-84ad29a8ae86",
+    "@type": "PartDefinition",
+    "declaredName": "Beamformer",
+    "doc": "Analog, digital, or hybrid beamforming network.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "0b8db4be-8ecc-5fcc-b070-50d7f045a93e",
+    "@type": "PortDefinition",
+    "declaredName": "CtrlPort",
+    "doc": "Command and telemetry interface.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "ce353229-ef97-52e3-ac19-f4df350521bf",
+    "@type": "PartDefinition",
+    "declaredName": "Modem",
+    "doc": "Waveform modulation and demodulation.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "6135b1d7-499b-55e0-95aa-599a7e284640",
+    "@type": "PartDefinition",
+    "declaredName": "PhasedArrayAntenna",
+    "doc": "Aperture, T/R modules, and beamformer as one antenna.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "067521d2-7897-5793-96ae-08b028fa1c19",
+    "@type": "PartDefinition",
+    "declaredName": "RFFrontEnd",
+    "doc": "Up/down conversion and filtering between antenna and modem.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "4bb589d1-348f-5785-83ab-500c8fd84aa8",
+    "@type": "PortDefinition",
+    "declaredName": "RFPort",
+    "doc": "Guided-wave RF interface.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "873bab2a-c8f0-53d7-a925-1e1f2b353541",
+    "@type": "PartDefinition",
+    "declaredName": "RadiatingAperture",
+    "doc": "The element lattice as one aperture.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "06987dd6-9d5f-59db-a2a8-7ad008c49862",
+    "@type": "PartDefinition",
+    "declaredName": "SatcomTerminal",
+    "doc": "A complete ground terminal.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "e5ef84f4-3263-5167-a451-b7a0092f2ae8",
+    "@type": "PartDefinition",
+    "declaredName": "TRModule",
+    "doc": "Transmit/receive module: PA, LNA, phase shifter, switch.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623",
+    "@type": "Package",
+    "declaredName": "RFRequirements",
+    "doc": "Requirement definitions for RF terminals. Usages own attributes metricKey (str), threshold (number with unit), op (>=, <=, ==), and optionally severity (must/should/nice); sysml2kit.interop reads them."
+  },
+  {
+    "@id": "14aea7c3-ac3a-566b-8b5e-b1bbd7e3db76",
+    "@type": "RequirementDefinition",
+    "declaredName": "BandwidthRequirement",
+    "doc": "Minimum instantaneous bandwidth.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "a4fc9182-5aab-5320-9fb3-1c1b4852b1bc",
+    "@type": "RequirementDefinition",
+    "declaredName": "CostCeilingRequirement",
+    "doc": "Maximum recurring unit cost.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "7ff37d29-edd2-5040-abaa-849b4accbbc8",
+    "@type": "RequirementDefinition",
+    "declaredName": "CrosscheckRequirement",
+    "doc": "Maximum disagreement between independent analyses.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "9e9927a6-23b7-5361-8b03-4a4b6856af98",
+    "@type": "RequirementDefinition",
+    "declaredName": "EirpRequirement",
+    "doc": "Minimum effective isotropic radiated power.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "db434d58-99d8-5849-bfcd-91d48173a875",
+    "@type": "RequirementDefinition",
+    "declaredName": "GOverTRequirement",
+    "doc": "Minimum receive figure of merit.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "9fb05038-d472-5e9f-8af5-2db81ec3086d",
+    "@type": "RequirementDefinition",
+    "declaredName": "GratingLobeRequirement",
+    "doc": "Minimum grating-lobe margin in wavelengths.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "3671b024-e2de-5fbd-8a18-297a58f4aaa1",
+    "@type": "RequirementDefinition",
+    "declaredName": "LinkMarginRequirement",
+    "doc": "Minimum worst-case link margin.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "2f8f98db-2259-53fa-aef8-05b3c9c47e6b",
+    "@type": "RequirementDefinition",
+    "declaredName": "PowerCeilingRequirement",
+    "doc": "Maximum prime-power draw.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "08d1a44b-ecfa-512e-a9c3-94d4c692f166",
+    "@type": "RequirementDefinition",
+    "declaredName": "ScanLossRequirement",
+    "doc": "Maximum gain loss at the scan-angle extreme.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "5092a034-fd94-5f8e-ad24-555a7f4a61ae",
+    "@type": "RequirementDefinition",
+    "declaredName": "SidelobeRequirement",
+    "doc": "Maximum pattern sidelobe level.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d",
+    "@type": "Package",
+    "declaredName": "RFVocabulary",
+    "doc": "Quantity kinds for antenna/RF systems engineering, with canonical units."
+  },
+  {
+    "@id": "a9c7c939-a222-5774-a100-aac3acf129fb",
+    "@type": "AttributeDefinition",
+    "declaredName": "AxialRatio_dB",
+    "doc": "Polarization axial ratio.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "d278bd37-bdd7-5ea5-9ac6-ccb655cd6fdd",
+    "@type": "AttributeDefinition",
+    "declaredName": "Bandwidth_MHz",
+    "doc": "Occupied or instantaneous bandwidth.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "MHz"
+  },
+  {
+    "@id": "ccbb0c0f-208e-5b7a-8a05-79691a9fc4f0",
+    "@type": "AttributeDefinition",
+    "declaredName": "EIRP_dBW",
+    "doc": "Effective isotropic radiated power.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dBW"
+  },
+  {
+    "@id": "f0f7f982-cb74-5289-98a2-7a92348d853c",
+    "@type": "AttributeDefinition",
+    "declaredName": "Frequency_GHz",
+    "doc": "Carrier or design frequency.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "GHz"
+  },
+  {
+    "@id": "74575cdb-ec1a-5476-90ea-d7b31c1efb4b",
+    "@type": "AttributeDefinition",
+    "declaredName": "GOverT_dBK",
+    "doc": "Receive figure of merit G/T.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dBK"
+  },
+  {
+    "@id": "82b21a60-f575-544f-aad5-6ff5bc0a2036",
+    "@type": "AttributeDefinition",
+    "declaredName": "Gain_dBi",
+    "doc": "Antenna gain relative to isotropic.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dBi"
+  },
+  {
+    "@id": "f448d718-62fc-55d1-995e-a9b3e8ab68db",
+    "@type": "AttributeDefinition",
+    "declaredName": "LinkMargin_dB",
+    "doc": "Margin above the required SNR.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "4840c024-6eb7-5e99-b54b-a3d319820853",
+    "@type": "AttributeDefinition",
+    "declaredName": "NoiseFigure_dB",
+    "doc": "Cascaded receive noise figure.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "49f0dc5c-b758-508a-957e-5ac4be40f749",
+    "@type": "AttributeDefinition",
+    "declaredName": "PrimePower_W",
+    "doc": "Prime (DC input) power draw.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "W"
+  },
+  {
+    "@id": "f09b9594-2da5-5e1c-a97a-292dcf96643b",
+    "@type": "AttributeDefinition",
+    "declaredName": "ScanAngle_deg",
+    "doc": "Beam scan angle off broadside.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "deg"
+  },
+  {
+    "@id": "ea41e7f1-92f5-5c5a-9aa8-3ca7008a7360",
+    "@type": "AttributeDefinition",
+    "declaredName": "ScanLoss_dB",
+    "doc": "Gain loss at the scan angle relative to broadside.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "f288192e-4276-57e2-ae5b-86793dc4d8d8",
+    "@type": "AttributeDefinition",
+    "declaredName": "SidelobeLevel_dB",
+    "doc": "Peak sidelobe level relative to the main beam.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "ca55d823-7b6b-52a8-821e-4b30e6ede1b7",
+    "@type": "AttributeDefinition",
+    "declaredName": "UnitCost_USD",
+    "doc": "Recurring unit cost in US dollars.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    }
+  },
+  {
+    "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6",
+    "@type": "Package",
+    "declaredName": "SatcomTerminal28GHz",
+    "doc": "28 GHz LEO uplink phased-array ground terminal, mirroring the aedl t3-001 benchmark: close the worst-case link over the evaluation envelope inside a 450 W prime-power and 45 kUSD unit-cost ceiling.",
+    "imports": [
+      "RFVocabulary::*",
+      "RFParts::*",
+      "RFRequirements::*",
+      "RFAnalyses::*"
+    ]
+  },
+  {
+    "@id": "2f9b8849-c625-51e9-88ea-4241f7e9eab8",
+    "@type": "AllocationUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "6ad9f34e-a7ac-586f-bd27-c7a2a26c4c93"
+    },
+    "target": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    }
+  },
+  {
+    "@id": "4ca0c774-8004-5fd5-8c44-6bdb4fa2e5ff",
+    "@type": "AllocationUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "79540985-26fd-50a9-a1f6-fa179337e334"
+    },
+    "target": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    }
+  },
+  {
+    "@id": "6907420e-e87c-5eed-9880-77bb71c77590",
+    "@type": "AllocationUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "87a6b660-8715-5547-a2ed-6bebfc2e4b94"
+    },
+    "target": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    }
+  },
+  {
+    "@id": "06e0688b-8492-54ed-947a-54af71711910",
+    "@type": "RequirementUsage",
+    "declaredName": "ClearSkyAgreement",
+    "declaredShortName": "REQ-CLEARSKY-AGREE",
+    "definition": {
+      "@id": "7ff37d29-edd2-5040-abaa-849b4accbbc8"
+    },
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "text": "Clear-sky margins from the two link analyses shall agree within 1.2 dB."
+  },
+  {
+    "@id": "9e62f6e7-7fb4-5aea-8121-7ae9196dc8cd",
+    "@type": "AttributeUsage",
+    "declaredName": "metricKey",
+    "owningRelatedElement": {
+      "@id": "06e0688b-8492-54ed-947a-54af71711910"
+    },
+    "value": {
+      "value": "crosscheck_clearsky_margin_disagreement_db"
+    }
+  },
+  {
+    "@id": "cc7e0b0f-7454-5cdf-9e75-ba6d2154e4c8",
+    "@type": "AttributeUsage",
+    "declaredName": "op",
+    "owningRelatedElement": {
+      "@id": "06e0688b-8492-54ed-947a-54af71711910"
+    },
+    "value": {
+      "value": "<="
+    }
+  },
+  {
+    "@id": "04273012-ccca-5e93-8ecf-6466467a17ab",
+    "@type": "AttributeUsage",
+    "declaredName": "severity",
+    "owningRelatedElement": {
+      "@id": "06e0688b-8492-54ed-947a-54af71711910"
+    },
+    "value": {
+      "value": "should"
+    }
+  },
+  {
+    "@id": "dcd9aa18-33af-55af-b16a-c0f7921f89f9",
+    "@type": "AttributeUsage",
+    "declaredName": "threshold",
+    "owningRelatedElement": {
+      "@id": "06e0688b-8492-54ed-947a-54af71711910"
+    },
+    "value": {
+      "value": 1.2,
+      "unit": "dB"
+    }
+  },
+  {
+    "@id": "18acd001-8544-53e6-8607-013e4a713665",
+    "@type": "RequirementUsage",
+    "declaredName": "GainCrosscheck",
+    "declaredShortName": "REQ-GAIN-XCHECK",
+    "definition": {
+      "@id": "7ff37d29-edd2-5040-abaa-849b4accbbc8"
+    },
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "text": "Claimed and integrated gain shall agree within 0.5 dB."
+  },
+  {
+    "@id": "5c0b677a-e251-53b2-ab9c-db085233396f",
+    "@type": "AttributeUsage",
+    "declaredName": "metricKey",
+    "owningRelatedElement": {
+      "@id": "18acd001-8544-53e6-8607-013e4a713665"
+    },
+    "value": {
+      "value": "crosscheck_gain_disagreement_db"
+    }
+  },
+  {
+    "@id": "4e11b5da-2d88-58d7-bda1-b5a1dfd08fcd",
+    "@type": "AttributeUsage",
+    "declaredName": "op",
+    "owningRelatedElement": {
+      "@id": "18acd001-8544-53e6-8607-013e4a713665"
+    },
+    "value": {
+      "value": "<="
+    }
+  },
+  {
+    "@id": "3145c90f-740e-561d-8d23-a33a8e21c51e",
+    "@type": "AttributeUsage",
+    "declaredName": "severity",
+    "owningRelatedElement": {
+      "@id": "18acd001-8544-53e6-8607-013e4a713665"
+    },
+    "value": {
+      "value": "should"
+    }
+  },
+  {
+    "@id": "ed0c7764-e53c-5773-8d6c-23e52cab77a7",
+    "@type": "AttributeUsage",
+    "declaredName": "threshold",
+    "owningRelatedElement": {
+      "@id": "18acd001-8544-53e6-8607-013e4a713665"
+    },
+    "value": {
+      "value": 0.5,
+      "unit": "dB"
+    }
+  },
+  {
+    "@id": "6ad9f34e-a7ac-586f-bd27-c7a2a26c4c93",
+    "@type": "RequirementUsage",
+    "declaredName": "GratingLobeMargin",
+    "declaredShortName": "REQ-GRATING",
+    "definition": {
+      "@id": "9fb05038-d472-5e9f-8af5-2db81ec3086d"
+    },
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "text": "The lattice shall keep grating lobes out of visible space over the scan envelope."
+  },
+  {
+    "@id": "e411e8cc-2140-5ab9-a54b-fe0cbc0d8827",
+    "@type": "AttributeUsage",
+    "declaredName": "metricKey",
+    "owningRelatedElement": {
+      "@id": "6ad9f34e-a7ac-586f-bd27-c7a2a26c4c93"
+    },
+    "value": {
+      "value": "grating_margin_lambda"
+    }
+  },
+  {
+    "@id": "2fd4169b-e7ce-5cdf-aff6-8f8d7811e32e",
+    "@type": "AttributeUsage",
+    "declaredName": "op",
+    "owningRelatedElement": {
+      "@id": "6ad9f34e-a7ac-586f-bd27-c7a2a26c4c93"
+    },
+    "value": {
+      "value": ">="
+    }
+  },
+  {
+    "@id": "15be506b-531e-565d-8a5d-6b991817f5a3",
+    "@type": "AttributeUsage",
+    "declaredName": "severity",
+    "owningRelatedElement": {
+      "@id": "6ad9f34e-a7ac-586f-bd27-c7a2a26c4c93"
+    },
+    "value": {
+      "value": "must"
+    }
+  },
+  {
+    "@id": "c43ddf5c-4cfb-5b06-b9e3-d8ab50815925",
+    "@type": "AttributeUsage",
+    "declaredName": "threshold",
+    "owningRelatedElement": {
+      "@id": "6ad9f34e-a7ac-586f-bd27-c7a2a26c4c93"
+    },
+    "value": {
+      "value": 0.0
+    }
+  },
+  {
+    "@id": "ac20a37b-9c3d-5cbf-8b4d-c18a63489927",
+    "@type": "RequirementUsage",
+    "declaredName": "IndependentLinkClosure",
+    "declaredShortName": "REQ-INDEP-LINK",
+    "definition": {
+      "@id": "3671b024-e2de-5fbd-8a18-297a58f4aaa1"
+    },
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "text": "The link shall also close under the independent opensatcom recomputation."
+  },
+  {
+    "@id": "37127b4e-cb5b-5e56-a43d-8ddaba461013",
+    "@type": "AttributeUsage",
+    "declaredName": "metricKey",
+    "owningRelatedElement": {
+      "@id": "ac20a37b-9c3d-5cbf-8b4d-c18a63489927"
+    },
+    "value": {
+      "value": "opensatcom_worst_case_margin_db"
+    }
+  },
+  {
+    "@id": "6f1a222b-297e-5383-818b-75e498baaedf",
+    "@type": "AttributeUsage",
+    "declaredName": "op",
+    "owningRelatedElement": {
+      "@id": "ac20a37b-9c3d-5cbf-8b4d-c18a63489927"
+    },
+    "value": {
+      "value": ">="
+    }
+  },
+  {
+    "@id": "0d84291e-a35d-52c4-b084-468af242a81a",
+    "@type": "AttributeUsage",
+    "declaredName": "severity",
+    "owningRelatedElement": {
+      "@id": "ac20a37b-9c3d-5cbf-8b4d-c18a63489927"
+    },
+    "value": {
+      "value": "must"
+    }
+  },
+  {
+    "@id": "718c9c23-4a92-545d-b311-da29e1920a51",
+    "@type": "AttributeUsage",
+    "declaredName": "threshold",
+    "owningRelatedElement": {
+      "@id": "ac20a37b-9c3d-5cbf-8b4d-c18a63489927"
+    },
+    "value": {
+      "value": 0.0,
+      "unit": "dB"
+    }
+  },
+  {
+    "@id": "79540985-26fd-50a9-a1f6-fa179337e334",
+    "@type": "RequirementUsage",
+    "declaredName": "PatternSidelobes",
+    "declaredShortName": "REQ-SLL",
+    "definition": {
+      "@id": "5092a034-fd94-5f8e-ad24-555a7f4a61ae"
+    },
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "text": "Worst-case pattern sidelobe level shall not exceed -16 dB."
+  },
+  {
+    "@id": "9634c710-4a20-52c6-94ef-4988c5d0d319",
+    "@type": "AttributeUsage",
+    "declaredName": "metricKey",
+    "owningRelatedElement": {
+      "@id": "79540985-26fd-50a9-a1f6-fa179337e334"
+    },
+    "value": {
+      "value": "worst_case_pattern_sll_db"
+    }
+  },
+  {
+    "@id": "2e20bb3c-8c71-5292-b093-c36463e8c751",
+    "@type": "AttributeUsage",
+    "declaredName": "op",
+    "owningRelatedElement": {
+      "@id": "79540985-26fd-50a9-a1f6-fa179337e334"
+    },
+    "value": {
+      "value": "<="
+    }
+  },
+  {
+    "@id": "ef547a53-1913-5c92-ab67-6a95000e5a4e",
+    "@type": "AttributeUsage",
+    "declaredName": "severity",
+    "owningRelatedElement": {
+      "@id": "79540985-26fd-50a9-a1f6-fa179337e334"
+    },
+    "value": {
+      "value": "must"
+    }
+  },
+  {
+    "@id": "ed8c5bbe-02bc-5e0f-9e06-26e4b47d565c",
+    "@type": "AttributeUsage",
+    "declaredName": "threshold",
+    "owningRelatedElement": {
+      "@id": "79540985-26fd-50a9-a1f6-fa179337e334"
+    },
+    "value": {
+      "value": -16.0,
+      "unit": "dB"
+    }
+  },
+  {
+    "@id": "87a6b660-8715-5547-a2ed-6bebfc2e4b94",
+    "@type": "RequirementUsage",
+    "declaredName": "PrimePowerCeiling",
+    "declaredShortName": "REQ-POWER",
+    "definition": {
+      "@id": "2f8f98db-2259-53fa-aef8-05b3c9c47e6b"
+    },
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "text": "Prime power draw shall not exceed 450 W."
+  },
+  {
+    "@id": "ef256608-158e-5971-a0a2-756ea34b020b",
+    "@type": "AttributeUsage",
+    "declaredName": "metricKey",
+    "owningRelatedElement": {
+      "@id": "87a6b660-8715-5547-a2ed-6bebfc2e4b94"
+    },
+    "value": {
+      "value": "prime_power_w"
+    }
+  },
+  {
+    "@id": "82ed9694-bc43-54cc-bee4-60a158923b2c",
+    "@type": "AttributeUsage",
+    "declaredName": "op",
+    "owningRelatedElement": {
+      "@id": "87a6b660-8715-5547-a2ed-6bebfc2e4b94"
+    },
+    "value": {
+      "value": "<="
+    }
+  },
+  {
+    "@id": "5c93cda9-fd3b-5903-a083-f46a3ca5663a",
+    "@type": "AttributeUsage",
+    "declaredName": "severity",
+    "owningRelatedElement": {
+      "@id": "87a6b660-8715-5547-a2ed-6bebfc2e4b94"
+    },
+    "value": {
+      "value": "must"
+    }
+  },
+  {
+    "@id": "f65b5d68-b3c5-5086-a6fe-13e9c91a2fe8",
+    "@type": "AttributeUsage",
+    "declaredName": "threshold",
+    "owningRelatedElement": {
+      "@id": "87a6b660-8715-5547-a2ed-6bebfc2e4b94"
+    },
+    "value": {
+      "value": 450.0,
+      "unit": "W"
+    }
+  },
+  {
+    "@id": "01f345b2-e4e7-5758-a9f4-c4d6e6154dfe",
+    "@type": "SatisfyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    },
+    "target": {
+      "@id": "6ad9f34e-a7ac-586f-bd27-c7a2a26c4c93"
+    }
+  },
+  {
+    "@id": "570be35a-a995-51bb-bb34-f576c7835041",
+    "@type": "SatisfyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    },
+    "target": {
+      "@id": "79540985-26fd-50a9-a1f6-fa179337e334"
+    }
+  },
+  {
+    "@id": "ba21486c-e043-55ff-adc8-cea4e29040ac",
+    "@type": "SatisfyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    },
+    "target": {
+      "@id": "ac20a37b-9c3d-5cbf-8b4d-c18a63489927"
+    }
+  },
+  {
+    "@id": "1f3d7ff8-5fcf-51e8-bc23-6ae39f925635",
+    "@type": "SatisfyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    },
+    "target": {
+      "@id": "87a6b660-8715-5547-a2ed-6bebfc2e4b94"
+    }
+  },
+  {
+    "@id": "07e3c899-1f46-5cf3-9ac0-cdaf489f783e",
+    "@type": "SatisfyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    },
+    "target": {
+      "@id": "0edc682b-2ac1-5631-b0f9-a8fd5d8978c8"
+    }
+  },
+  {
+    "@id": "15751c57-0c2b-5e96-b474-59deeed27fa6",
+    "@type": "SatisfyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    },
+    "target": {
+      "@id": "888637bf-a67a-559f-80c6-e7c7ca317415"
+    }
+  },
+  {
+    "@id": "0edc682b-2ac1-5631-b0f9-a8fd5d8978c8",
+    "@type": "RequirementUsage",
+    "declaredName": "UnitCostCeiling",
+    "declaredShortName": "REQ-COST",
+    "definition": {
+      "@id": "a4fc9182-5aab-5320-9fb3-1c1b4852b1bc"
+    },
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "text": "Recurring unit cost shall not exceed 45,000 USD from the parts table."
+  },
+  {
+    "@id": "06c21e65-4b1c-5101-9695-2a9ba2e4137e",
+    "@type": "AttributeUsage",
+    "declaredName": "metricKey",
+    "owningRelatedElement": {
+      "@id": "0edc682b-2ac1-5631-b0f9-a8fd5d8978c8"
+    },
+    "value": {
+      "value": "unit_cost_usd"
+    }
+  },
+  {
+    "@id": "6f500b0b-7848-55b1-99db-c2cdc9b3ce45",
+    "@type": "AttributeUsage",
+    "declaredName": "op",
+    "owningRelatedElement": {
+      "@id": "0edc682b-2ac1-5631-b0f9-a8fd5d8978c8"
+    },
+    "value": {
+      "value": "<="
+    }
+  },
+  {
+    "@id": "ac7da20f-37ee-5c23-b695-d4fff9614caf",
+    "@type": "AttributeUsage",
+    "declaredName": "severity",
+    "owningRelatedElement": {
+      "@id": "0edc682b-2ac1-5631-b0f9-a8fd5d8978c8"
+    },
+    "value": {
+      "value": "must"
+    }
+  },
+  {
+    "@id": "15070963-a375-567a-97f7-02ad46d4d9ae",
+    "@type": "AttributeUsage",
+    "declaredName": "threshold",
+    "owningRelatedElement": {
+      "@id": "0edc682b-2ac1-5631-b0f9-a8fd5d8978c8"
+    },
+    "value": {
+      "value": 45000.0
+    }
+  },
+  {
+    "@id": "631b0a59-c15c-5173-870e-eeda34b2fdcb",
+    "@type": "VerifyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "ab173363-519d-5e93-adbe-51b3267910e8"
+    },
+    "target": {
+      "@id": "06e0688b-8492-54ed-947a-54af71711910"
+    }
+  },
+  {
+    "@id": "31b3361a-a3b1-56e3-8600-d14cdfeefe40",
+    "@type": "VerifyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "ab173363-519d-5e93-adbe-51b3267910e8"
+    },
+    "target": {
+      "@id": "ac20a37b-9c3d-5cbf-8b4d-c18a63489927"
+    }
+  },
+  {
+    "@id": "5d2ed949-e926-54a2-bd80-3670c7aecb00",
+    "@type": "VerifyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "ab173363-519d-5e93-adbe-51b3267910e8"
+    },
+    "target": {
+      "@id": "888637bf-a67a-559f-80c6-e7c7ca317415"
+    }
+  },
+  {
+    "@id": "2395ea98-5a61-5f6e-921f-13140ce5f537",
+    "@type": "VerifyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "4bc0da54-70ff-53db-8a4a-c39e9c395b69"
+    },
+    "target": {
+      "@id": "18acd001-8544-53e6-8607-013e4a713665"
+    }
+  },
+  {
+    "@id": "69d8494a-953b-530b-b5d1-f9c92621e696",
+    "@type": "VerifyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "4bc0da54-70ff-53db-8a4a-c39e9c395b69"
+    },
+    "target": {
+      "@id": "6ad9f34e-a7ac-586f-bd27-c7a2a26c4c93"
+    }
+  },
+  {
+    "@id": "f56e6099-60ae-568c-9c98-2776ceffa796",
+    "@type": "VerifyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "4bc0da54-70ff-53db-8a4a-c39e9c395b69"
+    },
+    "target": {
+      "@id": "79540985-26fd-50a9-a1f6-fa179337e334"
+    }
+  },
+  {
+    "@id": "870376e6-a518-58e6-befd-f0c118c4d65d",
+    "@type": "VerifyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "af417da9-9c35-5662-8ed8-473d067ed2d2"
+    },
+    "target": {
+      "@id": "87a6b660-8715-5547-a2ed-6bebfc2e4b94"
+    }
+  },
+  {
+    "@id": "ac192cc9-8949-5f61-98d1-c8131f951e43",
+    "@type": "VerifyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "source": {
+      "@id": "af417da9-9c35-5662-8ed8-473d067ed2d2"
+    },
+    "target": {
+      "@id": "0edc682b-2ac1-5631-b0f9-a8fd5d8978c8"
+    }
+  },
+  {
+    "@id": "888637bf-a67a-559f-80c6-e7c7ca317415",
+    "@type": "RequirementUsage",
+    "declaredName": "WorstCaseLinkMargin",
+    "declaredShortName": "REQ-LINK-MARGIN",
+    "definition": {
+      "@id": "3671b024-e2de-5fbd-8a18-297a58f4aaa1"
+    },
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "text": "The link shall close (margin >= 0 dB) worst-case over the evaluation envelope."
+  },
+  {
+    "@id": "e710e028-570b-586b-b0dc-5b28fd1b9f84",
+    "@type": "AttributeUsage",
+    "declaredName": "metricKey",
+    "owningRelatedElement": {
+      "@id": "888637bf-a67a-559f-80c6-e7c7ca317415"
+    },
+    "value": {
+      "value": "worst_case_link_margin_db"
+    }
+  },
+  {
+    "@id": "53ed2155-41a6-5c8f-8d12-3262c457b228",
+    "@type": "AttributeUsage",
+    "declaredName": "op",
+    "owningRelatedElement": {
+      "@id": "888637bf-a67a-559f-80c6-e7c7ca317415"
+    },
+    "value": {
+      "value": ">="
+    }
+  },
+  {
+    "@id": "2fdea2f6-cae3-5bc7-a775-3ae1fde4fc82",
+    "@type": "AttributeUsage",
+    "declaredName": "severity",
+    "owningRelatedElement": {
+      "@id": "888637bf-a67a-559f-80c6-e7c7ca317415"
+    },
+    "value": {
+      "value": "must"
+    }
+  },
+  {
+    "@id": "8a18b919-b8b1-5d4c-a618-c8faff78f33d",
+    "@type": "AttributeUsage",
+    "declaredName": "threshold",
+    "owningRelatedElement": {
+      "@id": "888637bf-a67a-559f-80c6-e7c7ca317415"
+    },
+    "value": {
+      "value": 0.0,
+      "unit": "dB"
+    }
+  },
+  {
+    "@id": "ab173363-519d-5e93-adbe-51b3267910e8",
+    "@type": "AnalysisCaseUsage",
+    "declaredName": "linkBudget",
+    "definition": {
+      "@id": "97886442-1eb2-508e-ab76-e603d6a09fb6"
+    },
+    "objective": "Close the uplink worst-case over the t3-001 evaluation envelope.",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "subject": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    }
+  },
+  {
+    "@id": "4bc0da54-70ff-53db-8a4a-c39e9c395b69",
+    "@type": "AnalysisCaseUsage",
+    "declaredName": "patternAnalysis",
+    "definition": {
+      "@id": "0ffc38d6-779a-5692-852e-137f74a0434c"
+    },
+    "objective": "Integrate the full pattern; recompute gain, sidelobes, grating margin.",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "subject": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    }
+  },
+  {
+    "@id": "af417da9-9c35-5662-8ed8-473d067ed2d2",
+    "@type": "AnalysisCaseUsage",
+    "declaredName": "swapCost",
+    "definition": {
+      "@id": "0f3faf77-fbd0-5633-82c3-7742e282ef4d"
+    },
+    "objective": "Roll up prime power and unit cost from the parts table.",
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    },
+    "subject": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    }
+  },
+  {
+    "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb",
+    "@type": "PartUsage",
+    "declaredName": "terminal",
+    "definition": {
+      "@id": "06987dd6-9d5f-59db-a2a8-7ad008c49862"
+    },
+    "owningRelatedElement": {
+      "@id": "37113d5a-75d3-5c8f-99d8-861ef96e9de6"
+    }
+  },
+  {
+    "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3",
+    "@type": "PartUsage",
+    "declaredName": "array",
+    "definition": {
+      "@id": "6135b1d7-499b-55e0-95aa-599a7e284640"
+    },
+    "owningRelatedElement": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    }
+  },
+  {
+    "@id": "5efe8740-5a1c-5199-8e72-bde853739476",
+    "@type": "AttributeUsage",
+    "declaredName": "bandwidth",
+    "owningRelatedElement": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    },
+    "value": {
+      "value": 50.0,
+      "unit": "MHz",
+      "source": "t3-001 brief"
+    }
+  },
+  {
+    "@id": "186ac9f4-1b64-5c2b-a5b7-1a83ba310fc3",
+    "@type": "PartUsage",
+    "declaredName": "beamformer",
+    "definition": {
+      "@id": "1f47c2af-24bd-5553-b16a-84ad29a8ae86"
+    },
+    "owningRelatedElement": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    }
+  },
+  {
+    "@id": "36dcb9f5-38d5-5106-b8af-d81e94161c1a",
+    "@type": "PortUsage",
+    "declaredName": "beamOut",
+    "definition": {
+      "@id": "b7e1dad6-cb74-5420-bc97-e105da38e45d"
+    },
+    "owningRelatedElement": {
+      "@id": "186ac9f4-1b64-5c2b-a5b7-1a83ba310fc3"
+    }
+  },
+  {
+    "@id": "000db8d9-f6ab-5f0c-be2d-550354265726",
+    "@type": "PartUsage",
+    "declaredName": "elements",
+    "definition": {
+      "@id": "7f368b18-c534-583f-8ba9-68600e06e983"
+    },
+    "multiplicity": "[1..*]",
+    "owningRelatedElement": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    }
+  },
+  {
+    "@id": "4dd760b1-81db-5c70-acf4-e1d07a4e6822",
+    "@type": "AttributeUsage",
+    "declaredName": "frequency",
+    "owningRelatedElement": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    },
+    "value": {
+      "value": 28.0,
+      "unit": "GHz",
+      "source": "t3-001 brief"
+    }
+  },
+  {
+    "@id": "44181504-f010-52ad-bdfd-39b02f773609",
+    "@type": "AttributeUsage",
+    "declaredName": "maxScanAngle",
+    "owningRelatedElement": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    },
+    "value": {
+      "value": 60.0,
+      "unit": "deg",
+      "source": "t3-001 envelope"
+    }
+  },
+  {
+    "@id": "ae2fcf19-d626-58e5-8e43-6c88c8a0100d",
+    "@type": "PartUsage",
+    "declaredName": "trModules",
+    "definition": {
+      "@id": "e5ef84f4-3263-5167-a451-b7a0092f2ae8"
+    },
+    "multiplicity": "[1..*]",
+    "owningRelatedElement": {
+      "@id": "fecc316f-a923-5fa2-8e4f-5e0144a00fc3"
+    }
+  },
+  {
+    "@id": "d0c9d46c-4c99-54b8-824a-48299e37c99e",
+    "@type": "ConnectionUsage",
+    "declaredName": "beamFeed",
+    "owningRelatedElement": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    },
+    "source": {
+      "@id": "36dcb9f5-38d5-5106-b8af-d81e94161c1a"
+    },
+    "target": {
+      "@id": "8b913037-a085-5531-8c43-233546949950"
+    }
+  },
+  {
+    "@id": "ea72fc40-2a18-5f46-a377-8ceab6375907",
+    "@type": "PartUsage",
+    "declaredName": "frontEnd",
+    "definition": {
+      "@id": "067521d2-7897-5793-96ae-08b028fa1c19"
+    },
+    "owningRelatedElement": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    }
+  },
+  {
+    "@id": "8b913037-a085-5531-8c43-233546949950",
+    "@type": "PortUsage",
+    "declaredName": "beamIn",
+    "definition": {
+      "@id": "b7e1dad6-cb74-5420-bc97-e105da38e45d"
+    },
+    "owningRelatedElement": {
+      "@id": "ea72fc40-2a18-5f46-a377-8ceab6375907"
+    }
+  },
+  {
+    "@id": "3759b52a-e873-50ce-916b-7cc3336c22e2",
+    "@type": "PartUsage",
+    "declaredName": "modem",
+    "definition": {
+      "@id": "ce353229-ef97-52e3-ac19-f4df350521bf"
+    },
+    "owningRelatedElement": {
+      "@id": "cd5d574b-1868-5941-87ac-621fdf54fbdb"
+    }
+  }
+]

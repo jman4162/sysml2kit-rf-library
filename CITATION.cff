@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this model library, please cite it as below."
+title: "sysml2kit-rf-library: SysML v2 models for antenna/RF systems engineering"
+authors:
+  - family-names: Hodge
+    given-names: John
+    email: jah70@vt.edu
+license: Apache-2.0
+repository-code: "https://github.com/jman4162/sysml2kit-rf-library"
+url: "https://github.com/jman4162/sysml2kit-rf-library"
+keywords:
+  - sysml
+  - mbse
+  - antenna
+  - phased-array
+  - rf

@@ -1,0 +1,380 @@
+[
+  {
+    "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317",
+    "@type": "Package",
+    "declaredName": "RFAnalyses",
+    "doc": "Analysis case definitions; bindings to physics engines live downstream."
+  },
+  {
+    "@id": "0ffc38d6-779a-5692-852e-137f74a0434c",
+    "@type": "AnalysisCaseDefinition",
+    "declaredName": "ArrayPatternAnalysis",
+    "doc": "Full pattern integration: gain, sidelobes, grating lobes.",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
+    "@id": "97886442-1eb2-508e-ab76-e603d6a09fb6",
+    "@type": "AnalysisCaseDefinition",
+    "declaredName": "LinkBudgetAnalysis",
+    "doc": "Worst-case link closure over an evaluation envelope.",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
+    "@id": "728bf6f2-e130-550d-8680-9117909edfa8",
+    "@type": "AnalysisCaseDefinition",
+    "declaredName": "ScanPerformanceAnalysis",
+    "doc": "Gain and pattern degradation across the scan envelope.",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
+    "@id": "0f3faf77-fbd0-5633-82c3-7742e282ef4d",
+    "@type": "AnalysisCaseDefinition",
+    "declaredName": "SwapCostAnalysis",
+    "doc": "Prime power and recurring cost rollup.",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
+    "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443",
+    "@type": "Package",
+    "declaredName": "RFParts",
+    "doc": "Part and port definitions for phased-array antenna systems."
+  },
+  {
+    "@id": "7f368b18-c534-583f-8ba9-68600e06e983",
+    "@type": "PartDefinition",
+    "declaredName": "AntennaElement",
+    "doc": "A single radiating element.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "b7e1dad6-cb74-5420-bc97-e105da38e45d",
+    "@type": "PortDefinition",
+    "declaredName": "BeamPort",
+    "doc": "Formed-beam signal interface.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "1f47c2af-24bd-5553-b16a-84ad29a8ae86",
+    "@type": "PartDefinition",
+    "declaredName": "Beamformer",
+    "doc": "Analog, digital, or hybrid beamforming network.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "0b8db4be-8ecc-5fcc-b070-50d7f045a93e",
+    "@type": "PortDefinition",
+    "declaredName": "CtrlPort",
+    "doc": "Command and telemetry interface.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "ce353229-ef97-52e3-ac19-f4df350521bf",
+    "@type": "PartDefinition",
+    "declaredName": "Modem",
+    "doc": "Waveform modulation and demodulation.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "6135b1d7-499b-55e0-95aa-599a7e284640",
+    "@type": "PartDefinition",
+    "declaredName": "PhasedArrayAntenna",
+    "doc": "Aperture, T/R modules, and beamformer as one antenna.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "067521d2-7897-5793-96ae-08b028fa1c19",
+    "@type": "PartDefinition",
+    "declaredName": "RFFrontEnd",
+    "doc": "Up/down conversion and filtering between antenna and modem.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "4bb589d1-348f-5785-83ab-500c8fd84aa8",
+    "@type": "PortDefinition",
+    "declaredName": "RFPort",
+    "doc": "Guided-wave RF interface.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "873bab2a-c8f0-53d7-a925-1e1f2b353541",
+    "@type": "PartDefinition",
+    "declaredName": "RadiatingAperture",
+    "doc": "The element lattice as one aperture.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "06987dd6-9d5f-59db-a2a8-7ad008c49862",
+    "@type": "PartDefinition",
+    "declaredName": "SatcomTerminal",
+    "doc": "A complete ground terminal.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "e5ef84f4-3263-5167-a451-b7a0092f2ae8",
+    "@type": "PartDefinition",
+    "declaredName": "TRModule",
+    "doc": "Transmit/receive module: PA, LNA, phase shifter, switch.",
+    "owningRelatedElement": {
+      "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443"
+    }
+  },
+  {
+    "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623",
+    "@type": "Package",
+    "declaredName": "RFRequirements",
+    "doc": "Requirement definitions for RF terminals. Usages own attributes metricKey (str), threshold (number with unit), op (>=, <=, ==), and optionally severity (must/should/nice); sysml2kit.interop reads them."
+  },
+  {
+    "@id": "14aea7c3-ac3a-566b-8b5e-b1bbd7e3db76",
+    "@type": "RequirementDefinition",
+    "declaredName": "BandwidthRequirement",
+    "doc": "Minimum instantaneous bandwidth.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "a4fc9182-5aab-5320-9fb3-1c1b4852b1bc",
+    "@type": "RequirementDefinition",
+    "declaredName": "CostCeilingRequirement",
+    "doc": "Maximum recurring unit cost.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "7ff37d29-edd2-5040-abaa-849b4accbbc8",
+    "@type": "RequirementDefinition",
+    "declaredName": "CrosscheckRequirement",
+    "doc": "Maximum disagreement between independent analyses.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "9e9927a6-23b7-5361-8b03-4a4b6856af98",
+    "@type": "RequirementDefinition",
+    "declaredName": "EirpRequirement",
+    "doc": "Minimum effective isotropic radiated power.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "db434d58-99d8-5849-bfcd-91d48173a875",
+    "@type": "RequirementDefinition",
+    "declaredName": "GOverTRequirement",
+    "doc": "Minimum receive figure of merit.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "9fb05038-d472-5e9f-8af5-2db81ec3086d",
+    "@type": "RequirementDefinition",
+    "declaredName": "GratingLobeRequirement",
+    "doc": "Minimum grating-lobe margin in wavelengths.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "3671b024-e2de-5fbd-8a18-297a58f4aaa1",
+    "@type": "RequirementDefinition",
+    "declaredName": "LinkMarginRequirement",
+    "doc": "Minimum worst-case link margin.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "2f8f98db-2259-53fa-aef8-05b3c9c47e6b",
+    "@type": "RequirementDefinition",
+    "declaredName": "PowerCeilingRequirement",
+    "doc": "Maximum prime-power draw.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "08d1a44b-ecfa-512e-a9c3-94d4c692f166",
+    "@type": "RequirementDefinition",
+    "declaredName": "ScanLossRequirement",
+    "doc": "Maximum gain loss at the scan-angle extreme.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "5092a034-fd94-5f8e-ad24-555a7f4a61ae",
+    "@type": "RequirementDefinition",
+    "declaredName": "SidelobeRequirement",
+    "doc": "Maximum pattern sidelobe level.",
+    "owningRelatedElement": {
+      "@id": "4b91e187-7604-5a7a-bfd1-107e3f659623"
+    }
+  },
+  {
+    "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d",
+    "@type": "Package",
+    "declaredName": "RFVocabulary",
+    "doc": "Quantity kinds for antenna/RF systems engineering, with canonical units."
+  },
+  {
+    "@id": "a9c7c939-a222-5774-a100-aac3acf129fb",
+    "@type": "AttributeDefinition",
+    "declaredName": "AxialRatio_dB",
+    "doc": "Polarization axial ratio.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "d278bd37-bdd7-5ea5-9ac6-ccb655cd6fdd",
+    "@type": "AttributeDefinition",
+    "declaredName": "Bandwidth_MHz",
+    "doc": "Occupied or instantaneous bandwidth.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "MHz"
+  },
+  {
+    "@id": "ccbb0c0f-208e-5b7a-8a05-79691a9fc4f0",
+    "@type": "AttributeDefinition",
+    "declaredName": "EIRP_dBW",
+    "doc": "Effective isotropic radiated power.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dBW"
+  },
+  {
+    "@id": "f0f7f982-cb74-5289-98a2-7a92348d853c",
+    "@type": "AttributeDefinition",
+    "declaredName": "Frequency_GHz",
+    "doc": "Carrier or design frequency.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "GHz"
+  },
+  {
+    "@id": "74575cdb-ec1a-5476-90ea-d7b31c1efb4b",
+    "@type": "AttributeDefinition",
+    "declaredName": "GOverT_dBK",
+    "doc": "Receive figure of merit G/T.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dBK"
+  },
+  {
+    "@id": "82b21a60-f575-544f-aad5-6ff5bc0a2036",
+    "@type": "AttributeDefinition",
+    "declaredName": "Gain_dBi",
+    "doc": "Antenna gain relative to isotropic.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dBi"
+  },
+  {
+    "@id": "f448d718-62fc-55d1-995e-a9b3e8ab68db",
+    "@type": "AttributeDefinition",
+    "declaredName": "LinkMargin_dB",
+    "doc": "Margin above the required SNR.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "4840c024-6eb7-5e99-b54b-a3d319820853",
+    "@type": "AttributeDefinition",
+    "declaredName": "NoiseFigure_dB",
+    "doc": "Cascaded receive noise figure.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "49f0dc5c-b758-508a-957e-5ac4be40f749",
+    "@type": "AttributeDefinition",
+    "declaredName": "PrimePower_W",
+    "doc": "Prime (DC input) power draw.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "W"
+  },
+  {
+    "@id": "f09b9594-2da5-5e1c-a97a-292dcf96643b",
+    "@type": "AttributeDefinition",
+    "declaredName": "ScanAngle_deg",
+    "doc": "Beam scan angle off broadside.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "deg"
+  },
+  {
+    "@id": "ea41e7f1-92f5-5c5a-9aa8-3ca7008a7360",
+    "@type": "AttributeDefinition",
+    "declaredName": "ScanLoss_dB",
+    "doc": "Gain loss at the scan angle relative to broadside.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "f288192e-4276-57e2-ae5b-86793dc4d8d8",
+    "@type": "AttributeDefinition",
+    "declaredName": "SidelobeLevel_dB",
+    "doc": "Peak sidelobe level relative to the main beam.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    },
+    "unit": "dB"
+  },
+  {
+    "@id": "ca55d823-7b6b-52a8-821e-4b30e6ede1b7",
+    "@type": "AttributeDefinition",
+    "declaredName": "UnitCost_USD",
+    "doc": "Recurring unit cost in US dollars.",
+    "owningRelatedElement": {
+      "@id": "8a276b1c-63d8-50d1-a0fe-9dbe9a4eb76d"
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[build-system]
+# hatchling 1.32 emits Metadata-Version 2.5, which twine (and the release
+# pipeline's checks) do not accept yet; cap until the toolchain catches up.
+requires = ["hatchling>=1.27,<1.32", "hatch-vcs>=0.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sysml2kit-rf-library"
+dynamic = ["version"]
+description = "SysML v2 model library for antenna/RF systems engineering, consumed through sysml2kit"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "John Hodge", email = "jhodge007@gmail.com" }]
+maintainers = [{ name = "John Hodge", email = "jhodge007@gmail.com" }]
+keywords = [
+  "sysml",
+  "sysml-v2",
+  "mbse",
+  "antenna",
+  "phased-array",
+  "rf",
+  "satcom",
+  "requirements",
+  "model-library",
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
+  "Typing :: Typed",
+]
+dependencies = ["sysml2kit>=0.0.1"]
+
+[project.urls]
+Homepage = "https://github.com/jman4162/sysml2kit-rf-library"
+Source = "https://github.com/jman4162/sysml2kit-rf-library"
+Issues = "https://github.com/jman4162/sysml2kit-rf-library/issues"
+
+[dependency-groups]
+test = ["pytest>=8.3"]
+lint = ["mypy>=1.15", "ruff>=0.16"]
+dev = [{ include-group = "test" }, { include-group = "lint" }]
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "0.0.0.dev0"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/sysml2kit_rf_library/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sysml2kit_rf_library"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [".github", "scripts/.slopvenv"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests", "scripts"]
+extend-exclude = ["src/sysml2kit_rf_library/_version.py"]
+
+[tool.ruff.lint]
+extend-select = ["B", "I", "UP", "C4", "SIM", "RET", "PT", "RUF", "D", "ARG", "PTH", "TID", "ICN"]
+ignore = ["D105", "D107", "D203", "D213"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D", "ARG"]
+
+[tool.mypy]
+strict = true
+warn_unreachable = true
+files = ["src/sysml2kit_rf_library", "scripts"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = ["-ra", "--strict-markers", "--strict-config"]
+xfail_strict = true
+filterwarnings = ["error"]
+
+[tool.slopscore]
+profile = "technical"

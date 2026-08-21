@@ -1,0 +1,24 @@
+# Private working notes
+*.local.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv
+src/sysml2kit_rf_library/_version.py
+
+# Tooling caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+
+scripts/.slopvenv/
