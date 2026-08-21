@@ -26,9 +26,11 @@ The kit stays domain-general; this library carries the RF vocabulary:
   crosscheck, power and cost ceilings, grating-lobe margin), each satisfied
   by a part and verified by an analysis.
 - **SatcomTerminalPAS** — the executable example: five requirements keyed to
-  metrics phased-array-systems emits, with a `verificationBinding` so
-  `sysml2kit verify` runs a real study and every requirement passes with
-  margin.
+  metrics phased-array-systems emits, verified through a three-rung fidelity
+  ladder (closed-form, pattern cuts, full-pattern integration) plus an
+  independent `opensatcom-link` margin cross-check. `sysml2kit verify` runs
+  the real studies and every requirement passes with margin; `--policy
+  escalate --budget-s 5` allocates the compute to the thinnest margins.
 
 Both bridges into the stack are merged: `phased_array_systems.interop.sysml`
 (requirement sets, and the `phased-array-systems` verification engine) and

@@ -50,16 +50,41 @@ package SatcomTerminalPAS {
     analysis pasStudy : LinkBudgetAnalysis {
         subject terminal;
         objective { doc /* Evaluate the terminal study with phased-array-systems. */ }
-        metadata verificationBinding about pasStudy {
-            engine = "phased-array-systems";
-            configRef = "satcom_terminal_pas.yaml";
-        }
     }
-    dependency from pasStudy to LinkMarginFloor; // verify
-    dependency from pasStudy to EirpFloor; // verify
-    dependency from pasStudy to SidelobeCeiling; // verify
-    dependency from pasStudy to PrimePowerCeiling; // verify
-    dependency from pasStudy to CostCeiling; // verify
+    metadata analyticBinding : verificationBinding about pasStudy {
+        engine = "phased-array-systems";
+        configRef = "satcom_terminal_pas.yaml";
+        'payload.antenna_fidelity' = "analytic";
+        fidelity = "analytic";
+        costSeconds = 0.001;
+    }
+    metadata patternCutsBinding : verificationBinding about pasStudy {
+        engine = "phased-array-systems";
+        configRef = "satcom_terminal_pas.yaml";
+        'payload.antenna_fidelity' = "pattern";
+        fidelity = "pattern-cuts";
+        costSeconds = 0.01;
+    }
+    metadata patternBinding : verificationBinding about pasStudy {
+        engine = "phased-array-systems-pattern";
+        configRef = "satcom_terminal_pas.yaml";
+        fidelity = "pattern";
+        costSeconds = 1.0;
+    }
+    dependency verify_1 from pasStudy to LinkMarginFloor;
+    dependency verify_2 from pasStudy to EirpFloor;
+    dependency verify_3 from pasStudy to SidelobeCeiling;
+    dependency verify_4 from pasStudy to PrimePowerCeiling;
+    dependency verify_5 from pasStudy to CostCeiling;
+    analysis linkCrosscheck : LinkBudgetAnalysis {
+        subject terminal;
+        objective { doc /* Recompute the link margin independently with opensatcom. */ }
+    }
+    metadata crosscheckBinding : verificationBinding about linkCrosscheck {
+        engine = "opensatcom-link";
+        configRef = "satcom_terminal_opensatcom.yaml";
+    }
+    dependency verify_6 from linkCrosscheck to LinkMarginFloor;
     satisfy LinkMarginFloor by terminal;
     satisfy EirpFloor by terminal.array;
     satisfy SidelobeCeiling by terminal.array;

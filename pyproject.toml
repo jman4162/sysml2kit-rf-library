@@ -40,7 +40,11 @@ dependencies = ["sysml2kit>=0.3.0"]
 
 [project.optional-dependencies]
 # Everything the executable verification example needs.
-verify = ["sysml2kit[parse,verify]>=0.3.1", "phased-array-systems>=0.13"]
+verify = [
+  "sysml2kit[parse,verify]>=0.4.0",
+  "phased-array-systems>=0.14",
+  "opensatcom>=0.8",
+]
 
 [project.urls]
 Homepage = "https://github.com/jman4162/sysml2kit-rf-library"

@@ -42,6 +42,15 @@
     }
   },
   {
+    "@id": "7cd7f4d5-1418-56ae-a840-4088792f8871",
+    "@type": "MetadataDefinition",
+    "declaredName": "verificationBinding",
+    "doc": "Binds an analysis case to a physics engine by registry name. Reserved keys: engine, configRef, payload.<dotted>, fidelity, costSeconds (see the sysml2kit SPEC).",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
     "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443",
     "@type": "Package",
     "declaredName": "RFParts",
@@ -744,6 +753,19 @@
     }
   },
   {
+    "@id": "6f9bb605-ad72-518e-b86f-868b8bd7929f",
+    "@type": "VerifyRequirementUsage",
+    "owningRelatedElement": {
+      "@id": "cef7920c-c25b-5ab8-b68f-b4aaa4db9210"
+    },
+    "source": {
+      "@id": "e02319fa-5f2b-51ec-85e8-b8c752ca9623"
+    },
+    "target": {
+      "@id": "2cbfba8b-c5ab-50d4-870c-228719abdc35"
+    }
+  },
+  {
     "@id": "141a12a8-9f2d-58a9-9673-4a2fab59e928",
     "@type": "VerifyRequirementUsage",
     "owningRelatedElement": {
@@ -809,6 +831,60 @@
     }
   },
   {
+    "@id": "94fcc031-4ef7-554c-8bcf-9ae214d9add1",
+    "@type": "MetadataUsage",
+    "annotated": {
+      "@id": "9025c5ca-3094-5cc0-aa8a-db926dbe85fd"
+    },
+    "declaredName": "analyticBinding",
+    "definition": {
+      "@id": "7cd7f4d5-1418-56ae-a840-4088792f8871"
+    },
+    "owningRelatedElement": {
+      "@id": "cef7920c-c25b-5ab8-b68f-b4aaa4db9210"
+    },
+    "values": {
+      "engine": "phased-array-systems",
+      "configRef": "satcom_terminal_pas.yaml",
+      "payload.antenna_fidelity": "analytic",
+      "fidelity": "analytic",
+      "costSeconds": 0.001
+    }
+  },
+  {
+    "@id": "b50bc045-37da-5520-b469-7002da2a7d60",
+    "@type": "MetadataUsage",
+    "annotated": {
+      "@id": "e02319fa-5f2b-51ec-85e8-b8c752ca9623"
+    },
+    "declaredName": "crosscheckBinding",
+    "definition": {
+      "@id": "7cd7f4d5-1418-56ae-a840-4088792f8871"
+    },
+    "owningRelatedElement": {
+      "@id": "cef7920c-c25b-5ab8-b68f-b4aaa4db9210"
+    },
+    "values": {
+      "engine": "opensatcom-link",
+      "configRef": "satcom_terminal_opensatcom.yaml"
+    }
+  },
+  {
+    "@id": "e02319fa-5f2b-51ec-85e8-b8c752ca9623",
+    "@type": "AnalysisCaseUsage",
+    "declaredName": "linkCrosscheck",
+    "definition": {
+      "@id": "97886442-1eb2-508e-ab76-e603d6a09fb6"
+    },
+    "objective": "Recompute the link margin independently with opensatcom.",
+    "owningRelatedElement": {
+      "@id": "cef7920c-c25b-5ab8-b68f-b4aaa4db9210"
+    },
+    "subject": {
+      "@id": "b78258a9-a6d2-510b-8ca2-ccd62fd9f452"
+    }
+  },
+  {
     "@id": "9025c5ca-3094-5cc0-aa8a-db926dbe85fd",
     "@type": "AnalysisCaseUsage",
     "declaredName": "pasStudy",
@@ -824,18 +900,44 @@
     }
   },
   {
-    "@id": "78954e26-d128-5482-b002-0358ea835aa2",
+    "@id": "1c9e4bb8-c9e8-5e08-85cf-0a02a7a51f89",
     "@type": "MetadataUsage",
     "annotated": {
       "@id": "9025c5ca-3094-5cc0-aa8a-db926dbe85fd"
     },
-    "declaredName": "verificationBinding",
+    "declaredName": "patternBinding",
+    "definition": {
+      "@id": "7cd7f4d5-1418-56ae-a840-4088792f8871"
+    },
     "owningRelatedElement": {
+      "@id": "cef7920c-c25b-5ab8-b68f-b4aaa4db9210"
+    },
+    "values": {
+      "engine": "phased-array-systems-pattern",
+      "configRef": "satcom_terminal_pas.yaml",
+      "fidelity": "pattern",
+      "costSeconds": 1.0
+    }
+  },
+  {
+    "@id": "49c4abba-ddf8-5b56-890b-6c87bfe1dfeb",
+    "@type": "MetadataUsage",
+    "annotated": {
       "@id": "9025c5ca-3094-5cc0-aa8a-db926dbe85fd"
+    },
+    "declaredName": "patternCutsBinding",
+    "definition": {
+      "@id": "7cd7f4d5-1418-56ae-a840-4088792f8871"
+    },
+    "owningRelatedElement": {
+      "@id": "cef7920c-c25b-5ab8-b68f-b4aaa4db9210"
     },
     "values": {
       "engine": "phased-array-systems",
-      "configRef": "satcom_terminal_pas.yaml"
+      "configRef": "satcom_terminal_pas.yaml",
+      "payload.antenna_fidelity": "pattern",
+      "fidelity": "pattern-cuts",
+      "costSeconds": 0.01
     }
   },
   {

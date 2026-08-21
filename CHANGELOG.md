@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.3.0 — 2026-08-21
+
+- SatcomTerminalPAS's analysis now carries a three-rung fidelity ladder:
+  `analyticBinding` (closed-form), `patternCutsBinding` (simulated
+  principal-plane cuts), and `patternBinding` (full-pattern integration
+  via the new `phased-array-systems-pattern` engine). The bindings are
+  named metadata usages typed by a new `metadata def verificationBinding`
+  in RFAnalyses, so each rung has a distinct stable id.
+- New `linkCrosscheck` analysis verifies the margin requirement through
+  `opensatcom-link` with opensatcom's own array and link models
+  (`satcom_terminal_opensatcom.yaml`); the pas-marked tests pin the
+  cross-stack agreement under 0.6 dB.
+- Payload YAMLs are copied next to the `.sysml` files by
+  `scripts/regenerate.py`, so `configRef` resolves from the textual
+  models too (`sysml2kit verify SatcomTerminalPAS.sysml RFAnalyses.sysml`).
+- `scripts/check_parse.py` no longer exempts Verify/Derive/Allocate/
+  MetadataUsage: with sysml2kit >= 0.4 they round-trip through text, and
+  only OpaqueElement remains parser-exempt.
+- `verify` extra floors move to `sysml2kit[parse,verify]>=0.4.0` and
+  `phased-array-systems>=0.14`, and gain `opensatcom>=0.8` for the
+  cross-check engine.
+
 ## 0.2.1 — 2026-08-21
 
 - Regenerated model artifacts with sysml2kit 0.3.1's corrected metadata

@@ -1,0 +1,23 @@
+# Study payload for the SatcomTerminalPAS example's verificationBinding.
+# Consumed by the phased-array-systems engine (run_study); the shape is a
+# phased-array-systems StudyConfig. Thresholds this study must meet live in
+# the model (SatcomTerminalPAS.sysml), not here.
+name: "SatcomTerminalPAS"
+array:
+  nx: 16
+  ny: 16
+  dx: 0.5
+  dy: 0.5
+  taper_type: taylor
+  taper_sll_db: -25.0
+rf:
+  tx_power_w_per_elem: 0.3
+  pa_efficiency: 0.25
+# Plain decimals on purpose: PyYAML reads 28.0e9 as a string.
+scenario:
+  type: comms
+  freq_hz: 28000000000.0
+  bandwidth_hz: 50000000.0
+  range_m: 815000.0
+  required_snr_db: 6.0
+  rx_antenna_gain_db: 38.0

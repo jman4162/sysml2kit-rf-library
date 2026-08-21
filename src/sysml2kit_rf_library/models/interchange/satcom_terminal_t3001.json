@@ -42,6 +42,15 @@
     }
   },
   {
+    "@id": "7cd7f4d5-1418-56ae-a840-4088792f8871",
+    "@type": "MetadataDefinition",
+    "declaredName": "verificationBinding",
+    "doc": "Binds an analysis case to a physics engine by registry name. Reserved keys: engine, configRef, payload.<dotted>, fidelity, costSeconds (see the sysml2kit SPEC).",
+    "owningRelatedElement": {
+      "@id": "47b08cf2-1b6b-5bb7-a9e0-917851048317"
+    }
+  },
+  {
     "@id": "6b32b011-1c70-5532-b2a2-4601ff5b7443",
     "@type": "Package",
     "declaredName": "RFParts",

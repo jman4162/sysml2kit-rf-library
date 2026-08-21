@@ -12,4 +12,7 @@ package RFAnalyses {
     analysis def SwapCostAnalysis {
         doc /* Prime power and recurring cost rollup. */
     }
+    metadata def verificationBinding {
+        doc /* Binds an analysis case to a physics engine by registry name. Reserved keys: engine, configRef, payload.<dotted>, fidelity, costSeconds (see the sysml2kit SPEC). */
+    }
 }

@@ -98,12 +98,12 @@ package SatcomTerminal28GHz {
     allocate PatternSidelobes to terminal.array;
     allocate GratingLobeMargin to terminal.array;
     allocate PrimePowerCeiling to terminal;
-    dependency from linkBudget to WorstCaseLinkMargin; // verify
-    dependency from linkBudget to IndependentLinkClosure; // verify
-    dependency from linkBudget to ClearSkyAgreement; // verify
-    dependency from patternAnalysis to PatternSidelobes; // verify
-    dependency from patternAnalysis to GainCrosscheck; // verify
-    dependency from patternAnalysis to GratingLobeMargin; // verify
-    dependency from swapCost to PrimePowerCeiling; // verify
-    dependency from swapCost to UnitCostCeiling; // verify
+    dependency verify_1 from linkBudget to WorstCaseLinkMargin;
+    dependency verify_2 from linkBudget to IndependentLinkClosure;
+    dependency verify_3 from linkBudget to ClearSkyAgreement;
+    dependency verify_4 from patternAnalysis to PatternSidelobes;
+    dependency verify_5 from patternAnalysis to GainCrosscheck;
+    dependency verify_6 from patternAnalysis to GratingLobeMargin;
+    dependency verify_7 from swapCost to PrimePowerCeiling;
+    dependency verify_8 from swapCost to UnitCostCeiling;
 }

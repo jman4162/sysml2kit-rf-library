@@ -1,0 +1,67 @@
+# Payload for the SatcomTerminalPAS linkCrosscheck analysis, consumed by
+# the opensatcom-link engine (run_link); the shape is an opensatcom
+# ProjectConfig plus a snapshot section. Same terminal as
+# satcom_terminal_pas.yaml, but opensatcom computes its own array gain
+# (PAM 16x16 Taylor) and link chain, so agreement with the
+# phased-array-systems margin is an independent check, not a replay.
+# Conventions mirrored from the PAS side: total tx power 0.3 W x 256
+# elements, feed loss 1 dB, and the receive system noise temperature
+# composed as T_ant + 290 (F - 1) = 290 + 288.6 K for the 3 dB noise
+# figure PAS defaults to.
+project:
+  name: "satcom_terminal_pas_crosscheck"
+  seed: 1
+  output_dir: "./runs"
+
+scenario:
+  name: "uplink_28ghz"
+  direction: "uplink"
+  freq_hz: 28000000000.0
+  bandwidth_hz: 50000000.0
+  polarization: "RHCP"
+  required_metric: "ebn0_db"
+  required_value: 6.0
+
+terminals:
+  tx:
+    name: "terminal"
+    lat_deg: 0.0
+    lon_deg: 0.0
+    alt_m: 0.0
+  rx:
+    name: "satellite"
+    lat_deg: 0.0
+    lon_deg: 0.0
+    alt_m: 815000.0
+    system_noise_temp_k: 578.6
+
+antenna:
+  tx:
+    model: "pam"
+    pam:
+      nx: 16
+      ny: 16
+      dx_lambda: 0.5
+      dy_lambda: 0.5
+      taper:
+        type: "taylor"
+        sidelobe_db: -25.0
+  rx:
+    model: "parametric"
+    parametric:
+      gain_dbi: 38.0
+
+rf_chain:
+  tx_power_w: 76.8
+  tx_losses_db: 1.0
+  rx_noise_temp_k: 578.6
+
+propagation:
+  model: "composite"
+  components:
+    - type: "fspl"
+    - type: "gas"
+
+snapshot:
+  elev_deg: 90.0
+  range_m: 815000.0

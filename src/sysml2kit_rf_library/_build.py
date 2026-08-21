@@ -115,6 +115,16 @@ def build_analyses(model: Model) -> Element:
     ]
     for name, doc in cases:
         builder.analysis_def(model, name, owner=pkg, doc=doc)
+    builder.metadata_def(
+        model,
+        "verificationBinding",
+        owner=pkg,
+        doc=(
+            "Binds an analysis case to a physics engine by registry name. "
+            "Reserved keys: engine, configRef, payload.<dotted>, fidelity, "
+            "costSeconds (see the sysml2kit SPEC)."
+        ),
+    )
     return pkg
 
 
@@ -364,8 +374,12 @@ def _add_pas_example(model: Model) -> Model:
     Unlike SatcomTerminal28GHz (which mirrors the aedl t3-001 benchmark and
     its metric names), this example's requirements use the metric keys
     phased-array-systems actually emits, and its analysis carries a
-    ``verificationBinding`` so ``sysml2kit verify`` runs a real study
-    (engine ``phased-array-systems``, config ``satcom_terminal_pas.yaml``).
+    fidelity ladder of ``verificationBinding`` metadata so ``sysml2kit
+    verify`` runs real studies: ``analytic`` (closed-form gain),
+    ``pattern-cuts`` (simulated principal-plane cuts, gain still composed
+    analytically), and ``pattern`` (full-pattern integration feeding the
+    link recompute). A second analysis cross-checks the margin requirement
+    against the independent ``opensatcom-link`` engine.
     """
     defs = _defs(model)
     pkg = builder.pkg(
@@ -461,14 +475,71 @@ def _add_pas_example(model: Model) -> Model:
         subject=terminal,
         objective="Evaluate the terminal study with phased-array-systems.",
     )
+    # Fidelity ladder: three bindings on one analysis, ordered by declared
+    # cost. The first two share the analytic gain composition (their link
+    # margins are identical by construction); only the pattern-integration
+    # rung moves the margin, which is why the ladder needs it.
+    binding_def = defs["verificationBinding"]
     builder.metadata(
         model,
         study,
-        {"engine": "phased-array-systems", "configRef": "satcom_terminal_pas.yaml"},
-        name="verificationBinding",
+        {
+            "engine": "phased-array-systems",
+            "configRef": "satcom_terminal_pas.yaml",
+            "payload.antenna_fidelity": "analytic",
+            "fidelity": "analytic",
+            "costSeconds": 0.001,
+        },
+        name="analyticBinding",
+        definition=binding_def,
+    )
+    builder.metadata(
+        model,
+        study,
+        {
+            "engine": "phased-array-systems",
+            "configRef": "satcom_terminal_pas.yaml",
+            "payload.antenna_fidelity": "pattern",
+            "fidelity": "pattern-cuts",
+            "costSeconds": 0.01,
+        },
+        name="patternCutsBinding",
+        definition=binding_def,
+    )
+    builder.metadata(
+        model,
+        study,
+        {
+            "engine": "phased-array-systems-pattern",
+            "configRef": "satcom_terminal_pas.yaml",
+            "fidelity": "pattern",
+            "costSeconds": 1.0,
+        },
+        name="patternBinding",
+        definition=binding_def,
     )
     for req_usage in req_elements.values():
         builder.verify(model, source=study, target=req_usage, owner=pkg)
+
+    # Independent margin cross-check: same requirement, different physics
+    # stack (opensatcom's link engine with its own antenna and propagation
+    # models). Disagreement between the two engines is the error bar.
+    crosscheck = builder.analysis(
+        model,
+        "linkCrosscheck",
+        owner=pkg,
+        definition=defs["LinkBudgetAnalysis"],
+        subject=terminal,
+        objective="Recompute the link margin independently with opensatcom.",
+    )
+    builder.metadata(
+        model,
+        crosscheck,
+        {"engine": "opensatcom-link", "configRef": "satcom_terminal_opensatcom.yaml"},
+        name="crosscheckBinding",
+        definition=binding_def,
+    )
+    builder.verify(model, source=crosscheck, target=req_elements["REQ-MARGIN"], owner=pkg)
     for short, satisfier in [
         ("REQ-MARGIN", terminal),
         ("REQ-EIRP", array),

@@ -25,11 +25,10 @@ def main() -> int:
 
     from sysml2kit.interchange import model_from_json
 
+    # With the sysml2kit >= 0.4 shim, verify/derive (named dependencies),
+    # allocate endpoints, and package-level metadata all round-trip; only
+    # opaque passthrough elements have no textual form of their own.
     parser_lossy = {
-        "VerifyRelationship",
-        "DeriveRelationship",
-        "AllocateRelationship",
-        "MetadataUsage",
         "OpaqueElement",
     }
     interchange_dir = root / "src" / "sysml2kit_rf_library" / "models" / "interchange"

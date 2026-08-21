@@ -5,6 +5,8 @@ Writes, with stable UUIDv5 ids so regeneration diffs cleanly:
 - ``models/interchange/rf_library.json`` — the four library packages
 - ``models/interchange/satcom_terminal_t3001.json`` — library + example
 - ``models/*.sysml`` — one textual file per package, for humans and other tools
+- ``models/*.yaml`` — engine payload copies, so configRef resolves from the
+  textual models too (the originals live next to the interchange JSON)
 
 CI runs this and fails if ``git diff`` is dirty afterward.
 """
@@ -48,6 +50,11 @@ def main() -> int:
             if not path.exists() or path.read_text() != text:
                 path.write_text(text)
                 print(f"wrote {package.declared_name}.sysml")
+    for payload in sorted((models / "interchange").glob("*.yaml")):
+        copy = models / payload.name
+        if not copy.exists() or copy.read_text() != payload.read_text():
+            copy.write_text(payload.read_text())
+            print(f"wrote {payload.name} (payload copy)")
     print("wrote interchange/{rf_library,satcom_terminal_t3001,satcom_terminal_pas}.json")
     return 0
 
