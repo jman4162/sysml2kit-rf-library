@@ -5,9 +5,9 @@ Load any packaged model by name:
 ```python
 from sysml2kit_rf_library import MODELS, load_model, models_dir
 
-print(sorted(MODELS))   # rf-library, satcom-terminal-pas, satcom-terminal-t3001
+print(sorted(MODELS))  # rf-library, satcom-terminal-pas, satcom-terminal-t3001
 model = load_model("rf-library")
-print(models_dir())     # the packaged .sysml and interchange files
+print(models_dir())  # the packaged .sysml and interchange files
 ```
 
 ## Library packages
