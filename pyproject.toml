@@ -36,7 +36,7 @@ classifiers = [
   "Topic :: Scientific/Engineering",
   "Typing :: Typed",
 ]
-dependencies = ["sysml2kit>=0.1.0"]
+dependencies = ["sysml2kit>=0.3.0"]
 
 [project.urls]
 Homepage = "https://github.com/jman4162/sysml2kit-rf-library"
