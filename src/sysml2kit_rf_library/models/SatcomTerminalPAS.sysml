@@ -51,8 +51,8 @@ package SatcomTerminalPAS {
         subject terminal;
         objective { doc /* Evaluate the terminal study with phased-array-systems. */ }
         metadata verificationBinding about pasStudy {
-            engine = 'phased-array-systems';
-            configRef = 'satcom_terminal_pas.yaml';
+            engine = "phased-array-systems";
+            configRef = "satcom_terminal_pas.yaml";
         }
     }
     dependency from pasStudy to LinkMarginFloor; // verify
